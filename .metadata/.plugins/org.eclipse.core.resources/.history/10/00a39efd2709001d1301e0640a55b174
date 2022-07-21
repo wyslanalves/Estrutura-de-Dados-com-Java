@@ -18,16 +18,17 @@ public class Vetor {
 	 * } }
 	 */
 
-	/*
-	 * public void adiciona(String elemento) throws Exception {
-	 * 
-	 * if (this.tamanho < this.elementos.length) { this.elementos[this.tamanho] =
-	 * elemento; this.tamanho++; } else { throw new
-	 * Exception("Vetor já está cheio, não é possovel adicionar mais elementos."); }
-	 * }
-	 */
+	/*public void adiciona(String elemento) throws Exception {
 
-	public boolean adiciona(String elemento) {
+		if (this.tamanho < this.elementos.length) {
+			this.elementos[this.tamanho] = elemento;
+			this.tamanho++;
+		} else {
+			throw new Exception("Vetor já está cheio, não é possovel adicionar mais elementos.");
+		}
+	}*/
+
+	public boolean adiciona(String elemento){
 
 		if (this.tamanho < this.elementos.length) {
 			this.elementos[this.tamanho] = elemento;
@@ -37,29 +38,32 @@ public class Vetor {
 			return false;
 		}
 	}
-
+	
 	public int tamanho() {
 		return this.tamanho;
 	}
 
 	@Override
-	public String toString() {
-
+	public String toString(){
+		
 		StringBuilder s = new StringBuilder();
 		s.append("[");
-
-		for (int i = 0; i < this.tamanho - 1; i++) {
+		
+		
+		
+		for(int i=0; i<this.tamanho-1; i++) {
 			s.append(this.elementos[i]);
 			s.append(", ");
 		}
-
-		if (this.tamanho > 0) {
-			s.append(this.elementos[this.tamanho - 1]);
+		
+		if(this.tamanho>0){
+			s += this.elementos[this.tamanho-1];
 		}
-
-		s.append("[");
-
-		return s.toString();
+		
+		s += "]";
+		
+		return  Arrays.toString(elementos);
 	}
-
+	
+	
 }
